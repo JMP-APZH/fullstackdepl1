@@ -25,15 +25,22 @@ export const Success = ({ adminUsers }) => {
     //   })}
     // </ul>
 
-    <ul>
+    <ul className="grid grid-cols-3 grid-flow-row gap-4">
       {adminUsers.map((adminuser) => (
         <adminuser key={adminuser.id} >
-        <header>
-          <h2> {adminuser.name} </h2>
-        </header>
-        <p> {adminuser.age} </p>
 
-        <img src={adminuser.avatar} />
+        <div className="">
+          <div className="flex flex-col items-center justify-center bg-black w-80">
+            <header className="flex flex-col items-center justify-center">
+              <h2 className="flex flex-col items-center justify-center bg-green-400 text-2xl font-semibold m-4 w-80">
+                {adminuser.name}
+                <p className="text-xl text-red-600 font-bold my-2"> {adminuser.age} </p>
+              </h2>
+            </header>
+            <img className="flex content-center rounded-full mb-2" src={adminuser.avatar} width="150" height="150" />
+          </div>
+          {/* <img className="rounded-full" src={adminuser.avatar} width="150" height="150" /> */}
+        </div>
 
         </adminuser>
       ))
