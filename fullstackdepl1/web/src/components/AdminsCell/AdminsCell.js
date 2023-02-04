@@ -6,6 +6,7 @@ export const QUERY = gql`
       avatar
       age
     }
+    adminuserCount
   }
 `
 
@@ -17,14 +18,16 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ adminUsers }) => {
+export const Success = ({ adminUsers, adminuserCount }) => {
+  console.log("The number of adminusers from the AdminsCell : ", adminuserCount)
   return (
+
     // <ul>
     //   {adminUsers.map((item) => {
     //     return <li key={item.id}>{JSON.stringify(item)}</li>
     //   })}
     // </ul>
-
+    <>
     <ul className="grid grid-cols-3 grid-flow-row gap-4">
       {adminUsers.map((adminuser) => (
         <adminuser key={adminuser.id} >
@@ -47,5 +50,9 @@ export const Success = ({ adminUsers }) => {
 
       }
     </ul>
+
+    <p className='bg-blue-500 p-10 w-full h-20 text-black'> {adminuserCount} </p>
+
+    </>
   )
 }

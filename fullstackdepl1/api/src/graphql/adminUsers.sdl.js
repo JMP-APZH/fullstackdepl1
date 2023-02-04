@@ -6,9 +6,13 @@ export const schema = gql`
     age: Int!
   }
 
+
+
   type Query {
     adminUsers: [AdminUser!]! @requireAuth
     adminUser(id: Int!): AdminUser @requireAuth
+
+    adminuserCount: Int! @skipAuth
   }
 
   input CreateAdminUserInput {

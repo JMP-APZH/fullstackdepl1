@@ -10,6 +10,12 @@ export const adminUser = ({ id }) => {
   })
 }
 
+
+export const adminuserCount = () => {
+  return db.adminUser.count()
+}
+
+
 export const createAdminUser = ({ input }) => {
   return db.adminUser.create({
     data: input,
