@@ -6,13 +6,25 @@ export const schema = gql`
     age: Int!
   }
 
+# type AdminAvg {
+#   age: Int!
+#   average: Float!
+# }
 
+type AdminAvg {
+  _avg: Float
+  age: Float
+}
 
   type Query {
     adminUsers: [AdminUser!]! @requireAuth
     adminUser(id: Int!): AdminUser @requireAuth
 
     adminuserCount: Int! @skipAuth
+    adminuserAvgage: Float! @skipAuth
+    # adminuserAvgage: AdminAvg @skipAuth
+    # newavg: Float! @skipAuth
+    # adminuserAvgage: [AdminAvg] @skipAuth
   }
 
   input CreateAdminUserInput {

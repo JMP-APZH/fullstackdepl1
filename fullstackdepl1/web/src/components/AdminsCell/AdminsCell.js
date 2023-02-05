@@ -7,6 +7,16 @@ export const QUERY = gql`
       age
     }
     adminuserCount
+    # newavg
+    adminuserAvgage
+    # adminuserAvgage {
+    #   _avg
+    #   # age
+    # }
+    # adminuserAvgage {
+    #   age
+    #   average
+    # }
   }
 `
 
@@ -18,8 +28,10 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ adminUsers, adminuserCount }) => {
+export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg }) => {
   console.log("The number of adminusers from the AdminsCell : ", adminuserCount)
+  console.log("The average age of adminusers from the AdminsCell : ", adminuserAvgage)
+  console.log("The average age of adminusers from the AdminsCell 2 : ", newavg)
   return (
 
     // <ul>
@@ -51,7 +63,10 @@ export const Success = ({ adminUsers, adminuserCount }) => {
       }
     </ul>
 
-    <p className='bg-blue-500 p-10 w-full h-20 text-black'> {adminuserCount} </p>
+    <p className='bg-blue-500 p-10 w-full h-20 text-black'> The current number of admin users is: {adminuserCount} </p>
+
+    <p className='bg-green-500 p-10 w-full h-20 text-black'> The average age of the admin users is: {adminuserAvgage} </p>
+
 
     </>
   )
