@@ -132,7 +132,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
                 <tr key={index}>
                   <td>{item.id}</td>
                   <td>{item.name}</td>
-                  <td>{item.avatar}</td>
+                  <td><img className="flex justify-center items-center rounded-full mb-2" src={item.avatar} width="100" height="100" /></td>
                   <td>{item.age}</td>
                 </tr>
               ))}
