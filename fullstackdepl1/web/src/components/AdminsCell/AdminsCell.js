@@ -18,6 +18,8 @@ export const QUERY = gql`
     #   average
     # }
     adminorderage {
+      id
+      name
       age
     }
   }
@@ -36,6 +38,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
   console.log("The average age of adminusers from the AdminsCell : ", adminuserAvgage)
   console.log("The average age of adminusers from the AdminsCell 2 : ", newavg)
   console.log("List of ages desc : ", adminorderage)
+  console.log("List of adminuser : ", adminUsers)
   return (
 
     // <ul>
@@ -61,9 +64,20 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
           {/* <img className="rounded-full" src={adminuser.avatar} width="150" height="150" /> */}
         </div>
 
+
+
         </adminuser>
       ))
 
+      }
+    </ul>
+
+    <ul>
+      {adminorderage.map((adminorderage, adminuser) => (
+        <adminuser key={adminuser.id} >
+        <p> {adminorderage.id} - {adminorderage.name} is {adminorderage.age} </p>
+        </adminuser>
+      ))
       }
     </ul>
 

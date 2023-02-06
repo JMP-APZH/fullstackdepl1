@@ -16,6 +16,8 @@ type AdminAvg {
   age: Float
 }
 type Agedescorder {
+  id: Int
+  name: String
   age: Int
 }
 
