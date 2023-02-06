@@ -1,3 +1,8 @@
+import React, { useState } from 'react';
+import Table from 'react-bootstrap/Table';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
 export const QUERY = gql`
   query AdminsQuery {
     adminUsers {
@@ -39,6 +44,10 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
   console.log("The average age of adminusers from the AdminsCell 2 : ", newavg)
   console.log("List of ages desc : ", adminorderage)
   console.log("List of adminuser : ", adminUsers)
+
+  const [contacts, setContacts] = useState(adminUsers);
+  const [search, setSearch] = useState('');
+
   return (
 
     // <ul>
@@ -52,14 +61,14 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
         <adminuser key={adminuser.id} >
 
         <div className="">
-          <div className="flex flex-col items-center justify-center bg-black w-80">
+          <div className="flex flex-col items-center justify-center bg-black w-72">
             <header className="flex flex-col items-center justify-center">
-              <h2 className="flex flex-col items-center justify-center bg-green-400 text-2xl font-semibold m-4 w-80">
+              <h2 className="flex flex-col items-center justify-center bg-green-400 text-2xl font-semibold m-4 w-72">
                 {adminuser.name}
                 <p className="text-xl text-red-600 font-bold my-2"> {adminuser.age} </p>
               </h2>
             </header>
-            <img className="flex content-center rounded-full mb-2" src={adminuser.avatar} width="150" height="150" />
+            <img className="flex content-center rounded-full mb-2" src={adminuser.avatar} width="100" height="100" />
           </div>
           {/* <img className="rounded-full" src={adminuser.avatar} width="150" height="150" /> */}
         </div>
@@ -85,6 +94,54 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
 
     <p className='bg-green-500 p-10 w-full h-20 text-black'> The admin users have an average age of {adminuserAvgage} years old </p>
 
+
+      <div>
+        <p className="bg-yellow-500 w-full p-10 my-6">Here will take place the InstantSearch Test</p>
+
+        <div>
+
+          <Form>
+            <InputGroup className='my-3'>
+
+              {/* onChange for search */}
+              <Form.Control
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder='Search Admins'
+              />
+            </InputGroup>
+          </Form>
+
+          <Table striped bordered hover variant="dark">
+            <thead>
+              <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th className=''>Avatar</th>
+              <th>Age</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {adminUsers
+              .filter((item) => {
+                return search.toLowerCase() === ''
+                  ? item
+                  : item.name.toLowerCase().includes(search);
+              })
+              .map((item, index) => (
+                <tr key={index}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.avatar}</td>
+                  <td>{item.age}</td>
+                </tr>
+              ))}
+          </tbody>
+          </Table>
+        </div>
+
+        <p className="bg-red-500 w-full p-10 my-6">The next part from the other Cells is starting below</p>
+      </div>
 
     </>
   )
