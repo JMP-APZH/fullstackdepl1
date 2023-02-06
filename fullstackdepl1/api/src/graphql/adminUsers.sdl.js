@@ -15,6 +15,9 @@ type AdminAvg {
   _avg: Float
   age: Float
 }
+type Agedescorder {
+  age: Int
+}
 
   type Query {
     adminUsers: [AdminUser!]! @requireAuth
@@ -25,6 +28,8 @@ type AdminAvg {
     # adminuserAvgage: AdminAvg @skipAuth
     # newavg: Float! @skipAuth
     # adminuserAvgage: [AdminAvg] @skipAuth
+
+    adminorderage: [Agedescorder] @skipAuth
   }
 
   input CreateAdminUserInput {
