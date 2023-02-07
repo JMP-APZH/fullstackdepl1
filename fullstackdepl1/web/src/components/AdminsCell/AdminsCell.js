@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
+import './AdminsCell.css'
+
 export const QUERY = gql`
   query AdminsQuery {
     adminUsers {
@@ -143,6 +145,32 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
         </div>
 
         <p className="bg-red-500 w-full p-10 my-6">The next part from the other Cells is starting below</p>
+      </div>
+
+      <div className='bg-violet-500 p-4'>
+      <div className='wrapper'>
+        <div className='single-card'>
+          <div className='front border-solid border-2'>
+
+          </div>
+
+          <div className='back border-solid border-2'>
+                <div className='content'>
+                <h2> Name of the User </h2>
+                <h4> Work Title </h4>
+                <p> Description </p>
+                <p className='socials'>
+                  Socials
+                  <i> Facebook </i>
+                  <i> Insta </i>
+                  <i> Twitter </i>
+                </p>
+                </div>
+
+          </div>
+
+        </div>
+      </div>
       </div>
 
     </>
