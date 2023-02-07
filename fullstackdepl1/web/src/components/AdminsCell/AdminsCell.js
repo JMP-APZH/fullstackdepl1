@@ -45,7 +45,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
   console.log("List of ages desc : ", adminorderage)
   console.log("List of adminuser : ", adminUsers)
 
-  const [contacts, setContacts] = useState(adminUsers);
+  // const [contacts, setContacts] = useState(adminUsers);
   const [search, setSearch] = useState('');
 
   return (
@@ -81,6 +81,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
       }
     </ul>
 
+      <p className='p-2 underline'>The list of Admins by descending age order </p>
     <ul>
       {adminorderage.map((adminorderage, adminuser) => (
         <adminuser key={adminuser.id} >
@@ -112,7 +113,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
           </Form>
 
           <Table striped bordered hover variant="dark">
-            <thead>
+            <thead className=''>
               <tr>
               <th>ID</th>
               <th>First Name</th>
@@ -126,7 +127,8 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
               .filter((item) => {
                 return search.toLowerCase() === ''
                   ? item
-                  : item.name.toLowerCase().includes(search);
+                  : item.name.toLowerCase().includes(search)
+                  || item.age.toString().toLowerCase().includes(search);
               })
               .map((item, index) => (
                 <tr key={index}>
