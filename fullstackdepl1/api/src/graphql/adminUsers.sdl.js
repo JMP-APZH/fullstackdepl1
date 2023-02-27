@@ -20,6 +20,12 @@ type Agedescorder {
   name: String
   age: Int
 }
+type CountAge {
+  id: Int
+  name: String
+  age: Int
+}
+
 
   type Query {
     adminUsers: [AdminUser!]! @requireAuth
@@ -32,6 +38,7 @@ type Agedescorder {
     # adminuserAvgage: [AdminAvg] @skipAuth
 
     adminorderage: [Agedescorder] @skipAuth
+    admincountbyage: Int! @skipAuth
   }
 
   input CreateAdminUserInput {

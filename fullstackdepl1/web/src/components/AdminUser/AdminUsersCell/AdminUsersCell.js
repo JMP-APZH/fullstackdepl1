@@ -11,6 +11,7 @@ export const QUERY = gql`
       age
     }
     adminuserCount
+    admincountbyage
   }
 `
 
@@ -31,12 +32,14 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error?.message}</div>
 )
 
-export const Success = ({ adminUsers, adminuserCount }) => {
+export const Success = ({ adminUsers, adminuserCount, admincountbyage }) => {
   console.log("The number of adminusers from AdminUsersCell : ", adminuserCount)
+  console.log("The number of adminusers with age below 20 : ", admincountbyage)
   return (
     <>
     <AdminUsers adminUsers={adminUsers} />
     <p className='bg-blue-500 p-10 w-full h-20 text-black'> {adminuserCount} </p>
+    <p className='bg-blue-500 p-10 w-full h-20 text-black'> {admincountbyage} </p>
     </>
   )
 }

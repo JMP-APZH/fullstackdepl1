@@ -29,6 +29,7 @@ export const QUERY = gql`
       name
       age
     }
+    #admincountbyage
   }
 `
 
@@ -40,12 +41,13 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, adminorderage }) => {
+export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, adminorderage, admincountbyage }) => {
   console.log("The number of adminusers from the AdminsCell : ", adminuserCount)
   console.log("The average age of adminusers from the AdminsCell : ", adminuserAvgage)
   console.log("The average age of adminusers from the AdminsCell 2 : ", newavg)
   console.log("List of ages desc : ", adminorderage)
   console.log("List of adminuser : ", adminUsers)
+  
 
   // const [contacts, setContacts] = useState(adminUsers);
   const [search, setSearch] = useState('');
