@@ -47,7 +47,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
   console.log("The average age of adminusers from the AdminsCell 2 : ", newavg)
   console.log("List of ages desc : ", adminorderage)
   console.log("List of adminuser : ", adminUsers)
-  
+
 
   // const [contacts, setContacts] = useState(adminUsers);
   const [search, setSearch] = useState('');
@@ -60,19 +60,19 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
     //   })}
     // </ul>
     <>
-    <ul className="grid grid-cols-3 grid-flow-row gap-4">
+    <ul className="grid grid-cols-3 grid-flow-row gap-4 bg-violet-600 p-4 items-center">
       {adminUsers.map((adminuser) => (
         <adminuser key={adminuser.id} >
 
-        <div className="">
-          <div className="flex flex-col items-center justify-center bg-black w-72">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center bg-black w-72 h-72 rounded-2xl shadow-2xl shadow-yellow-500 my-4">
             <header className="flex flex-col items-center justify-center">
               <h2 className="flex flex-col items-center justify-center bg-green-400 text-2xl font-semibold m-4 w-72">
                 {adminuser.name}
-                <p className="text-xl text-red-600 font-bold my-2"> {adminuser.age} </p>
+                <p className="text-xl text-red-600 font-bold"> {adminuser.age} </p>
               </h2>
             </header>
-            <img className="flex content-center rounded-full mb-2" src={adminuser.avatar} width="100" height="100" />
+            <img className="rounded-full mb-2 mt-4" src={adminuser.avatar} width="110" height="110" />
           </div>
           {/* <img className="rounded-full" src={adminuser.avatar} width="150" height="150" /> */}
         </div>
