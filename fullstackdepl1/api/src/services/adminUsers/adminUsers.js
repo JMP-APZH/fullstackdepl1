@@ -46,8 +46,23 @@ export const adminorderage = async () => {
   // result['_avg'].age
 }
 
-export const admincountbyage = async () => {
-  const result2 = await db.adminUser.count({
+export const admincountbyage_50 = async () => {
+  const result50 = await db.adminUser.count({
+    where: {
+      age: {
+        lt: 50,
+        gte: 40,
+      }
+    },
+    _count: {
+      age: true,
+    },
+  })
+  return result50
+}
+
+export const admincountbyage_40 = async () => {
+  const result40 = await db.adminUser.count({
     where: {
       age: {
         lt: 40,
@@ -58,7 +73,22 @@ export const admincountbyage = async () => {
       age: true,
     },
   })
-  return result2
+  return result40
+}
+
+export const admincountbyage_30 = async () => {
+  const result30 = await db.adminUser.count({
+    where: {
+      age: {
+        lt: 30,
+        gte: 20,
+      }
+    },
+    _count: {
+      age: true,
+    },
+  })
+  return result30
 }
 
 

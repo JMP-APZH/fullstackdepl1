@@ -38,7 +38,9 @@ type CountAge {
     # adminuserAvgage: [AdminAvg] @skipAuth
 
     adminorderage: [Agedescorder] @skipAuth
-    admincountbyage: Int! @skipAuth
+    admincountbyage_50: Int! @skipAuth
+    admincountbyage_40: Int! @skipAuth
+    admincountbyage_30: Int! @skipAuth
   }
 
   input CreateAdminUserInput {
