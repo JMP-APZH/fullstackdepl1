@@ -86,15 +86,19 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
       }
     </ul>
 
-      <p className='p-2 underline'>The list of Admins by descending age order </p>
-    <ul>
-      {adminorderage.map((adminorderage, adminuser) => (
-        <adminuser key={adminuser.id} >
-        <p> {adminorderage.id} - {adminorderage.name} is {adminorderage.age} </p>
-        </adminuser>
-      ))
-      }
-    </ul>
+    <div className='text-center bg-violet-600 border-t-2 border-b-2 font-semibold'>
+      <p className='pt-2 pl-4 underline'>The list of Admins by descending age order</p>
+      <p className='text-red-500 no-underline'>Put an infinity loop</p> 
+      <ul className='pt-2 pl-4 pb-2'>
+        {adminorderage.map((adminorderage, adminuser) => (
+          <adminuser key={adminuser.id} >
+          <p className='p-2'> {adminorderage.id} - {adminorderage.name} is {adminorderage.age} yo. </p>
+          </adminuser>
+        ))
+        }
+      </ul>
+    </div>
+
 
     <p className='bg-blue-500 p-10 w-full h-20 text-black'> There are currently {adminuserCount} admin users </p>
 
@@ -199,10 +203,13 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
                       <h4> Work Title </h4>
                       <p> Description </p>
                       <p className='socials'>
+                      <div className='flex flex-col'>
                         Socials
                         <i> Facebook </i>
                         <i> Insta </i>
                         <i> Twitter </i>
+                      </div>
+
                       </p>
                     </div>
                 </div>

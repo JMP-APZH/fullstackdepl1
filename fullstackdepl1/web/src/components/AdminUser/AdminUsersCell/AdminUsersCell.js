@@ -177,7 +177,7 @@ export const Success = ({ adminUsers, adminuserCount, admincountbyage_50, adminc
       className='flex flex-col bg-black p-4 w-full'
     >
     <h1 className='text-center text-lg underline p-4 text-red-600'>All as of here comes from the AdminUsersCell</h1>
-    <AdminUsers adminUsers={adminUsers} />
+    {/* <AdminUsers adminUsers={adminUsers} /> */}
     <div className='shadow-2xl shadow-red-500 p-6 m-6 rounded-lg'>
 
       <div className='bg-blue-500 rounded-2xl w-full'>
