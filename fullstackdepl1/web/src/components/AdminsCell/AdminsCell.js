@@ -179,11 +179,12 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
 {/* as of here for dynamic card filling */}
 
       {/* <label> */}
+      <ul className="grid grid-cols-2 grid-flow-row gap-4 bg-violet-600 p-4 items-center">
       {adminUsers.map((item) => (
         <div className='bg-violet-500 p-4'>
-          <input type='checkbox' />
+          {/* <input type='checkbox' /> */}
           <div className='wrapper'>
-            <div className='flip-card'>
+            <div className='single-card'>
               <div className='front border-solid border-2'>
                 <img
                   src={item.avatar}
@@ -212,6 +213,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
           </div>
         </div>
         ))}
+        </ul>
       {/* </label> */}
 
     </>
