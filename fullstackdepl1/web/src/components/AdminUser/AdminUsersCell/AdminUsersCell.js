@@ -141,17 +141,34 @@ export const Success = ({ adminUsers, adminuserCount, admincountbyage_50, adminc
       title: {
           display: true,
           text: 'Admin age Repartition 1 - Bar Chart'
-      }
-  }
-  }
-  const options1 = {
-      plugins: {
-        title: {
-            display: true,
-            text: 'Admin age Repartition 2 - Doughnut'
+      },
+      animations: {
+        tension: {
+          duration: 1000,
+          easing: 'linear',
+          from: 1,
+          to: 0,
+          loop: true
         }
       }
-
+    }
+  }
+  const options1 = {
+    plugins: {
+      title: {
+          display: true,
+          text: 'Admin age Repartition 2 - Doughnut'
+      },
+      animations: {
+        tension: {
+          duration: 1000,
+          easing: 'linear',
+          from: 1,
+          to: 0,
+          loop: true
+        }
+      }
+    }
   }
 
   return (
@@ -181,14 +198,14 @@ export const Success = ({ adminUsers, adminuserCount, admincountbyage_50, adminc
           <Bar
             data={data}
             options = {options}
-            style={{height: 280, width: 200}}
+            style={{height: 60}}
             className='bg-gray-300 text-white p-4 shadow-2xl shadow-yellow-500 rounded-2xl'
           />
 
           <Doughnut
             data={data2}
             options = {options1}
-            style={{height: 300, width: 300}}
+            style={{width: 40}}
             className='bg-black text-white p-4 shadow-2xl shadow-yellow-500 rounded-2xl'
           />
         </div>

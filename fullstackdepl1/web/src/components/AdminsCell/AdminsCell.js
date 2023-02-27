@@ -64,15 +64,16 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
       {adminUsers.map((adminuser) => (
         <adminuser key={adminuser.id} >
 
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center h-full">
           <div className="flex flex-col items-center bg-black w-72 h-72 rounded-2xl shadow-2xl shadow-yellow-500 my-4">
             <header className="flex flex-col items-center justify-center">
               <h2 className="flex flex-col items-center justify-center bg-green-400 text-2xl font-semibold m-4 w-72">
                 {adminuser.name}
                 <p className="text-xl text-red-600 font-bold"> {adminuser.age} </p>
               </h2>
+              <img className="rounded-full" src={adminuser.avatar} width="110" height="110" />
             </header>
-            <img className="rounded-full mb-2 mt-4" src={adminuser.avatar} width="110" height="110" />
+
           </div>
           {/* <img className="rounded-full" src={adminuser.avatar} width="150" height="150" /> */}
         </div>
