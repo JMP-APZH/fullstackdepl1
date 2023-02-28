@@ -60,6 +60,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
     //   })}
     // </ul>
     <>
+    <h1 className='font-semibold bg-violet-600 text-center text-4xl'> ADMIN TEAM </h1>
     <ul className="grid grid-cols-3 grid-flow-row gap-4 bg-violet-600 p-4 items-center">
       {adminUsers.map((adminuser) => (
         <adminuser key={adminuser.id} >
@@ -87,7 +88,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
     </ul>
 
     <div className='text-center bg-violet-600 border-t-2 border-b-2 font-semibold'>
-      <p className='pt-2 pl-4 underline'>The list of Admins by descending age order</p>
+      <p className='pt-2 pl-4 underline text-3xl'>The list of Admins by descending age order</p>
       <p className='text-red-500 no-underline'>Put an infinity loop</p>
       <ul className='pt-2 pl-4 pb-2'>
         {adminorderage.map((adminorderage, adminuser) => (
@@ -98,6 +99,28 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
         }
       </ul>
     </div>
+
+<p>Here comes the infinite caroussel</p>
+    <div className='container1'>
+      <div className='slider'>
+        <ul className='pt-2 pl-4 pb-2'>
+          <div className='slide-track'>
+
+          {adminorderage.map((adminorderage, adminuser) => (
+            <adminuser key={adminuser.id} >
+              <div className='slide w-72 h-72'>
+              <p> {adminorderage.id} </p>
+                <img src={adminuser.avatar} width="110" height="110" />
+              </div>
+            </adminuser>
+          ))
+          }
+          </div>
+        </ul>
+
+      </div>
+    </div>
+
 
     <div className='flex justify-center gap-10 bg-violet-600'>
       <p className='bg-blue-500 h-54 w-60 text-black my-6 text-center rounded-2xl'>
@@ -117,6 +140,9 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
           {adminuserAvgage}
         </p>
       </p>
+
+
+
     </div>
 
 
@@ -132,7 +158,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
               {/* onChange for search */}
               <Form.Control
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder='Search Admins'
+                placeholder=' Admins InstantSearch (name or age)'
               />
             </InputGroup>
           </Form>
@@ -217,6 +243,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
                     <div className='content'>
                       <h2> {item.name} </h2>
                       <h4> Work Title </h4>
+                      <h4> {item.age} yo </h4>
                       <p> Description </p>
                       <p className='socials'>
                       <div className='flex flex-col'>

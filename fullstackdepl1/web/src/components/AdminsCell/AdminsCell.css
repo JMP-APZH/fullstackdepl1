@@ -84,6 +84,38 @@ body{
 }
 
 /*
+For the infinite slider
+*/
+
+.container1 {
+  min-height: 30vh;
+  diplay: grid;
+  place-items: center;
+}
+
+.slider {
+  height: 250px;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  display: grid;
+  place-items: center;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 18)
+}
+
+.slide {
+  height: 200px;
+  wisth: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+/*
 label{
   display: block;
   position: absolute;

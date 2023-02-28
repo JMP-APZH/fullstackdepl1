@@ -12,7 +12,15 @@ const GeneralLayout = ({ children }) => {
                 to={routes.admins()}
                 className='hover:text-red-600 hover:bg-black px-2'
               >
-                AdminDashBoard
+                AdminDashBoard 1
+              </Link>
+            </li>
+            <li className="bg-blue-700 font-bold text-yellow-600 hover:text-red-600 hover:bg-black">
+              <Link
+                to={routes.admins()}
+                className='hover:text-red-600 hover:bg-black px-2'
+              >
+                AdminDashBoard 2
               </Link>
             </li>
             <li className="bg-blue-700 font-bold text-yellow-600 hover:text-red-600 hover:bg-black">
