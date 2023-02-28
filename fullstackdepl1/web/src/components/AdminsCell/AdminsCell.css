@@ -106,7 +106,7 @@ For the infinite slider
 .slide-track {
   display: flex;
   width: calc(250px * 9);
-  animation: scroll 20s linear infinite;
+  animation: scroll 10s linear infinite;
 }
 
 .slide-track:hover {
@@ -114,11 +114,11 @@ For the infinite slider
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
+  50% {
+    transform: translateX(calc(50px * 2));
   }
-  100% {
-    transform: translateX(calc(-250px * 18));
+  50% {
+    transform: translateX(calc(-50px * 2));
   }
 }
 
