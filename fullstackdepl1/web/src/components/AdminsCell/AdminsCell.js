@@ -88,7 +88,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
 
     <div className='text-center bg-violet-600 border-t-2 border-b-2 font-semibold'>
       <p className='pt-2 pl-4 underline'>The list of Admins by descending age order</p>
-      <p className='text-red-500 no-underline'>Put an infinity loop</p> 
+      <p className='text-red-500 no-underline'>Put an infinity loop</p>
       <ul className='pt-2 pl-4 pb-2'>
         {adminorderage.map((adminorderage, adminuser) => (
           <adminuser key={adminuser.id} >
@@ -99,10 +99,26 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
       </ul>
     </div>
 
+    <div className='flex justify-center gap-10 bg-violet-600'>
+      <p className='bg-blue-500 h-54 w-60 text-black my-6 text-center rounded-2xl'>
+        <p className='bg-yellow-500 font-semibold'>
+          Current Admins
+        </p>
+        <p className='text-6xl text-center'>
+          {adminuserCount}
+        </p>
+      </p>
 
-    <p className='bg-blue-500 p-10 w-full h-20 text-black'> There are currently {adminuserCount} admin users </p>
+      <p className='bg-green-500 h-54 w-60 text-black my-6 text-center rounded-2xl'>
+        <p className='bg-yellow-500 font-semibold'>
+          Admins' Avg Age
+        </p>
+        <p className='text-6xl text-center'>
+          {adminuserAvgage}
+        </p>
+      </p>
+    </div>
 
-    <p className='bg-green-500 p-10 w-full h-20 text-black'> The admin users have an average age of {adminuserAvgage} years old </p>
 
 
       <div>
