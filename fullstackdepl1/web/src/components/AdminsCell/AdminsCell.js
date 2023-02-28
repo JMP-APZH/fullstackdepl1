@@ -101,8 +101,8 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
       </ul>
     </div>
 
-<p>Here comes the infinite caroussel</p>
-    <div className='container1'>
+<p className='bg-violet-600 text-center text-2xl font-semibold'>Here comes the infinite caroussel</p>
+    <div className='container1 bg-violet-600'>
       <div className='slider'>
         <ul className='pt-2 pl-4 pb-2'>
           <div className='slide-track'>
