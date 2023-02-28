@@ -94,12 +94,80 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
       <ul className='pt-2 pl-4 pb-2'>
         {adminorderage.map((adminorderage, adminuser) => (
           <adminuser key={adminuser.id} >
-          <p className='p-2'> {adminorderage.id} - {adminorderage.name} is {adminorderage.age} yo. </p>
+          <p className='flex p-2'>
+            <p
+              className='bg-red-600 rounded-full w-8 text-center font-bold mr-2'
+            >
+              {adminorderage.id}
+            </p>
+            <p>{adminorderage.name} is {adminorderage.age} yo. </p>
+          </p>
           </adminuser>
         ))
         }
       </ul>
     </div>
+
+<div className='flex items-center justify-center bg-violet-600 text-lg gap-5'>
+<div className='flex flex-col items-center justify-center'>
+  <p className='text-2xl p-2'> Admin sorted by order of registration </p>
+  <Table className='flex items-center justify-center text-center w-96'>
+    <thead className=''>
+      <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+            {adminUsers
+              .filter((item) => {
+                return search.toLowerCase() === ''
+                  ? item
+                  : item.name.toLowerCase().includes(search)
+                  || item.age.toString().toLowerCase().includes(search);
+              })
+              .map((item, index) => (
+                <tr key={index}>
+                  <td className='bg-red-600 rounded-full w-8 text-center font-bold mr-2'>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                </tr>
+              ))}
+          </tbody>
+  </Table>
+</div>
+
+<div className='flex flex-col items-center justify-center'>
+  <p className='text-2xl p-2'> Admin sorted by desc. age </p>
+  <Table className='flex items-center justify-center text-center w-96'>
+    <thead className=''>
+      <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+            {adminorderage
+              .filter((item) => {
+                return search.toLowerCase() === ''
+                  ? item
+                  : item.name.toLowerCase().includes(search)
+                  || item.age.toString().toLowerCase().includes(search);
+              })
+              .map((item, index) => (
+                <tr key={index}>
+                  <td className='bg-red-600 rounded-full w-8 text-center font-bold mr-2'>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                </tr>
+              ))}
+          </tbody>
+  </Table>
+  </div>
+</div>
+
 
 <p className='bg-violet-600 text-center text-2xl font-semibold'>Here comes the infinite caroussel</p>
     <div className='container1 bg-violet-600'>

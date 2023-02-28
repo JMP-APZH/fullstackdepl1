@@ -4,7 +4,7 @@ body{
 
 .wrapper,
 .single-card{
-  height: 450px;
+  height: 350px;
   max-width: 300px;
   margin: auto;
   position: relative;
@@ -44,24 +44,29 @@ body{
 
 .front{
   cursor: pointer;
-  height: 100%;
+  height: 101%;
   background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
   backface-visibility: hidden;
-  border-radius: 50px;
+  border-radius: 25px;
   background-size: cover;
   background-position: center center;
+}
+
+.front img {
+  width: 350px;
+  height: 350px;
 }
 
 .back{
   transform: rotateY(180deg);
   position: absolute;
   border-radius: 50px;
-  height: 450px;
+  height: 350px;
   background: #fff;
 }
 
 .content{
-  padding-top: 25%;
+  padding-top: 15%;
 }
 
 .content h2{
@@ -75,7 +80,7 @@ body{
 }
 
 .socials{
-  margin-top:20%;
+  margin-top:8%;
 }
 
 .socials i{
@@ -115,10 +120,10 @@ For the infinite slider
 
 @keyframes scroll {
   50% {
-    transform: translateX(calc(50px * 2));
+    transform: translateX(calc(50px * 4));
   }
   50% {
-    transform: translateX(calc(-50px * 2));
+    transform: translateX(calc(-60px * 4));
   }
 }
 
