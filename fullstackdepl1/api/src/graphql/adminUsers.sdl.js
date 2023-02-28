@@ -19,6 +19,7 @@ type Agedescorder {
   id: Int
   name: String
   age: Int
+  avatar: String!
 }
 type CountAge {
   id: Int

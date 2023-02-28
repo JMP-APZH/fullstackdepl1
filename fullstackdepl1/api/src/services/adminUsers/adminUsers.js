@@ -35,7 +35,7 @@ export const adminuserAvgage = async () => {
 
 export const adminorderage = async () => {
   const result1 = await db.adminUser.groupBy({
-    by: ['age', 'id', 'name'],
+    by: ['age', 'id', 'name', 'avatar'],
     orderBy: {
       age: 'desc',
       // id: true,

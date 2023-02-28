@@ -28,6 +28,7 @@ export const QUERY = gql`
       id
       name
       age
+      avatar
     }
     #admincountbyage
   }
@@ -107,12 +108,12 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
           <div className='slide-track'>
 
           {adminorderage.map((adminorderage, adminuser) => (
-            <adminuser key={adminuser.id} >
-              <div className='slide w-72 h-72'>
-              <p> {adminorderage.id} </p>
-                <img src={adminuser.avatar} width="110" height="110" />
+            <adminorderage key={adminorderage.id} >
+              <div className='slide'>
+              <p className='absolute bg-red-600 rounded-full w-8 text-center font-bold'> {adminorderage.id} </p>
+                <img src={adminorderage.avatar} width="110" height="110" />
               </div>
-            </adminuser>
+            </adminorderage>
           ))
           }
           </div>
