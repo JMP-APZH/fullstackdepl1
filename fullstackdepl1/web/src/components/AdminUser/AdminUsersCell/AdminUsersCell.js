@@ -4,6 +4,8 @@ import { Bar } from 'react-chartjs-2'
 
 import { Doughnut } from 'react-chartjs-2'
 
+import AdminUsersCell from './AdminUsersCell.css'
+
 import {
   Chart as ChartJS,
   BarElement,
@@ -194,21 +196,26 @@ export const Success = ({ adminUsers, adminuserCount, admincountbyage_50, adminc
 
         <p className='text-white text-center font-semibold border rounded shadow-2xl shadow-blue-500 p-2 w-60'>Here comes the charts</p>
 
-        <div className='flex flex-col gap-20 justify-center items-center mt-10 w-4/5'>
-          <Bar
-            data={data}
-            options = {options}
-            style={{height: 60}}
-            className='bg-gray-300 text-white p-4 shadow-2xl shadow-yellow-500 rounded-2xl'
-          />
+    <div className='flex flex-col gap-5 justify-center items-center mt-10'>
+      <div id='chart-wrapper2'>
+        <Bar
+          data={data}
+          options = {options}
+          // style={{height: 60}}
+          className='bg-gray-300 text-white p-4 shadow-2xl shadow-yellow-500 rounded-2xl'
+        />
+      </div>
 
-          <Doughnut
-            data={data2}
-            options = {options1}
-            style={{width: 40}}
-            className='bg-black text-white p-4 shadow-2xl shadow-yellow-500 rounded-2xl'
-          />
-        </div>
+      <div id='chart-wrapper2'>
+        <Doughnut
+          data={data2}
+          options = {options1}
+          // style={{width: 40}}
+          className='bg-black text-white p-4 shadow-2xl shadow-yellow-500 rounded-2xl'
+        />
+      </div>
+    </div>
+
 
       </div>
     </div>
