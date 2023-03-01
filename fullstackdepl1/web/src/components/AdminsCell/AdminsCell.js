@@ -62,7 +62,7 @@ export const Success = ({ adminUsers, adminuserCount, adminuserAvgage, newavg, a
     // </ul>
     <>
     <h1 className='font-semibold bg-violet-600 text-center text-4xl'> ADMIN TEAM </h1>
-    <ul className="grid grid-cols-3 grid-flow-row gap-4 bg-violet-600 p-4 items-center">
+    <ul className="grid grid-cols-3 grid-flow-row gap-4 lg:grid-cols-6 bg-violet-600 p-4 items-center">
       {adminUsers.map((adminuser) => (
         <adminuser key={adminuser.id} >
 
