@@ -23,3 +23,8 @@ model AdminUser {
   avatar String
   age    Int
 }
+
+model Emoticon {
+  id     Int    @id @default(autoincrement())
+  emoticon String
+ }

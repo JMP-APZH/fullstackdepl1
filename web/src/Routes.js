@@ -15,6 +15,12 @@ import GeneralLayout from './layouts/GeneralLayout/GeneralLayout'
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={ScaffoldLayout} title="Emoticons" titleTo="emoticons" buttonLabel="New Emoticon" buttonTo="newEmoticon">
+        <Route path="/emoticons/new" page={EmoticonNewEmoticonPage} name="newEmoticon" />
+        <Route path="/emoticons/{id:Int}/edit" page={EmoticonEditEmoticonPage} name="editEmoticon" />
+        <Route path="/emoticons/{id:Int}" page={EmoticonEmoticonPage} name="emoticon" />
+        <Route path="/emoticons" page={EmoticonEmoticonsPage} name="emoticons" />
+      </Set>
       <Set wrap={GeneralLayout}>
         <Route path="/charts" page={ChartsPage} name="charts" />
         <Route path="/admins" page={AdminsPage} name="admins" />
