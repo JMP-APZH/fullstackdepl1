@@ -116,37 +116,37 @@ export const Success = ({
   // };
 
   const datanivo = [
-      {
-        "id": "below 30 yo",
-        "label": 'below 30 yo',
-        "value": admincountbyage_30,
-        "color": "hsl(298, 70%, 50%)"
-      },
-      {
-        "id": "below 40 yo",
-        "label": 'below 40 yo',
-        "value": admincountbyage_40,
-        "color": "hsl(228, 70%, 50%)"
-      },
-      {
-        "id": "below 50 yo",
-        "label":  'below 50 yo',
-        "value": admincountbyage_50,
-        "color": "hsl(136, 70%, 50%)"
-      },
-      // {
-      //   "id": "php",
-      //   "label": "php",
-      //   "value": 537,
-      //   "color": "hsl(269, 70%, 50%)"
-      // },
-      // {
-      //   "id": "hack",
-      //   "label": "hack",
-      //   "value": 372,
-      //   "color": "hsl(298, 70%, 50%)"
-      // }
-    ]
+    {
+      id: 'below 30 yo',
+      label: 'below 30 yo',
+      value: admincountbyage_30,
+      color: 'hsl(298, 70%, 50%)',
+    },
+    {
+      id: 'below 40 yo',
+      label: 'below 40 yo',
+      value: admincountbyage_40,
+      color: 'hsl(228, 70%, 50%)',
+    },
+    {
+      id: 'below 50 yo',
+      label: 'below 50 yo',
+      value: admincountbyage_50,
+      color: 'hsl(136, 70%, 50%)',
+    },
+    // {
+    //   "id": "php",
+    //   "label": "php",
+    //   "value": 537,
+    //   "color": "hsl(269, 70%, 50%)"
+    // },
+    // {
+    //   "id": "hack",
+    //   "label": "hack",
+    //   "value": 372,
+    //   "color": "hsl(298, 70%, 50%)"
+    // }
+  ]
 
   const data = {
     labels: ['below 30 yo', 'below 40 yo', 'below 50 yo'],
@@ -210,13 +210,13 @@ export const Success = ({
 
   return (
     <>
-      <div className="flex w-full flex-col bg-black p-4">
+      <div className="flex items-center w-full flex-col bg-black p-4">
         <h1 className="p-4 text-center text-lg text-red-600 underline">
           All as of here comes from the AdminUsersCell
         </h1>
         {/* <AdminUsers adminUsers={adminUsers} /> */}
-        <div className="m-6 rounded-lg p-6 shadow-2xl shadow-red-500">
-          <div className="w-full rounded-2xl bg-blue-500 flex flex-col items-center">
+        <div className="m-6 flex max-w-lg items-center justify-center rounded-lg p-6 shadow-2xl shadow-red-500">
+          <div className="flex max-w-md flex-col items-center rounded-2xl bg-blue-500">
             <p className="w-5/8 mt-4 h-12 bg-blue-500 py-2 px-6 text-black">
               {' '}
               There are currently{' '}
@@ -266,111 +266,102 @@ export const Success = ({
           </div>
         </div>
       </div>
-      <div className='flex justify-center bg-black'>
-      <div className='flex w-96 h-96 rounded-2xl bg-black p-4 text-white shadow-2xl shadow-yellow-500'>
-      <ResponsivePie
-        data={datanivo}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        innerRadius={0.5}
-        padAngle={0.7}
-        cornerRadius={3}
-        activeOuterRadiusOffset={8}
-        borderWidth={1}
-        borderColor={{
-            from: 'color',
-            modifiers: [
-                [
-                    'darker',
-                    0.2
-                ]
-            ]
-        }}
-        arcLinkLabelsSkipAngle={10}
-        arcLinkLabelsTextColor="#333333"
-        arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: 'color' }}
-        arcLabelsSkipAngle={10}
-        arcLabelsTextColor={{
-            from: 'color',
-            modifiers: [
-                [
-                    'darker',
-                    2
-                ]
-            ]
-        }}
-        defs={[
-            {
+      <div className="flex justify-center bg-black">
+        <div className="flex flex-col items-center justify-center max-h-md max-w-md rounded-2xl bg-black p-4 text-white shadow-2xl shadow-yellow-500">
+        <p className='w-full text-center text-yellow-500'>Admin Age Repartition 3 - Nivo Pie Chart</p>
+          <ResponsivePie
+            data={datanivo}
+            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+            innerRadius={0.5}
+            padAngle={0.7}
+            cornerRadius={3}
+            activeOuterRadiusOffset={8}
+            borderWidth={1}
+            borderColor={{
+              from: 'color',
+              modifiers: [['darker', 0.2]],
+            }}
+            arcLinkLabelsSkipAngle={10}
+            arcLinkLabelsTextColor="#999"
+            arcLinkLabelsThickness={2}
+            arcLinkLabelsColor={{ from: 'color' }}
+            arcLabelsSkipAngle={10}
+            arcLabelsTextColor={{
+              from: 'color',
+              modifiers: [['darker', 2]],
+            }}
+            defs={[
+              {
                 id: 'dots',
                 type: 'patternDots',
                 background: 'inherit',
                 color: 'rgba(255, 255, 255, 0.3)',
                 size: 4,
                 padding: 1,
-                stagger: true
-            },
-            {
+                stagger: true,
+              },
+              {
                 id: 'lines',
                 type: 'patternLines',
                 background: 'inherit',
                 color: 'rgba(255, 255, 255, 0.3)',
                 rotation: -45,
                 lineWidth: 6,
-                spacing: 10
-            }
-        ]}
-        fill={[
-            {
+                spacing: 10,
+              },
+            ]}
+            fill={[
+              {
                 match: {
-                    id: 'below 30 yo'
+                  id: 'below 30 yo',
                 },
-                id: 'dots'
-            },
-            {
+                id: 'dots',
+              },
+              {
                 match: {
-                    id: 'below 40 yo'
+                  id: 'below 40 yo',
                 },
-                id: 'lines'
-            },
-            {
+                id: 'lines',
+              },
+              {
                 match: {
-                    id: 'below 50 yo'
+                  id: 'below 50 yo',
                 },
-                id: 'dots'
-            },
-            {
+                id: 'dots',
+              },
+              {
                 match: {
-                    id: 'python'
+                  id: 'python',
                 },
-                id: 'dots'
-            },
-            {
+                id: 'dots',
+              },
+              {
                 match: {
-                    id: 'scala'
+                  id: 'scala',
                 },
-                id: 'lines'
-            },
-            {
+                id: 'lines',
+              },
+              {
                 match: {
-                    id: 'lisp'
+                  id: 'lisp',
                 },
-                id: 'lines'
-            },
-            {
+                id: 'lines',
+              },
+              {
                 match: {
-                    id: 'elixir'
+                  id: 'elixir',
                 },
-                id: 'lines'
-            },
-            {
+                id: 'lines',
+              },
+              {
                 match: {
-                    id: 'javascript'
+                  id: 'javascript',
                 },
-                id: 'lines'
-            }
-        ]}
-        legends={[
-            {
+                id: 'lines',
+              },
+            ]}
+            legends={[
+              {
                 anchor: 'bottom',
                 direction: 'row',
                 justify: false,
@@ -385,19 +376,18 @@ export const Success = ({
                 symbolSize: 18,
                 symbolShape: 'circle',
                 effects: [
-                    {
-                        on: 'hover',
-                        style: {
-                            itemTextColor: '#000'
-                        }
-                    }
-                ]
-            }
-        ]}
-    />
+                  {
+                    on: 'hover',
+                    style: {
+                      itemTextColor: '#000',
+                    },
+                  },
+                ],
+              },
+            ]}
+          />
+        </div>
       </div>
-      </div>
-
     </>
   )
 }
