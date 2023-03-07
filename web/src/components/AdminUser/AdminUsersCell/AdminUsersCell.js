@@ -216,7 +216,7 @@ export const Success = ({
         </h1>
         {/* <AdminUsers adminUsers={adminUsers} /> */}
         <div className="m-6 rounded-lg p-6 shadow-2xl shadow-red-500">
-          <div className="w-full rounded-2xl bg-blue-500">
+          <div className="w-full rounded-2xl bg-blue-500 flex flex-col items-center">
             <p className="w-5/8 mt-4 h-12 bg-blue-500 py-2 px-6 text-black">
               {' '}
               There are currently{' '}
