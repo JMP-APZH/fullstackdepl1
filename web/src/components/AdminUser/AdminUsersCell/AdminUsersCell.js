@@ -267,7 +267,7 @@ export const Success = ({
         </div>
       </div>
       <div className='flex justify-center bg-black'>
-      <div className='flex w-96 h-96'>
+      <div className='flex w-96 h-96 rounded-2xl bg-black p-4 text-white shadow-2xl shadow-yellow-500'>
       <ResponsivePie
         data={datanivo}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -322,19 +322,19 @@ export const Success = ({
         fill={[
             {
                 match: {
-                    id: 'ruby'
+                    id: 'below 30 yo'
                 },
                 id: 'dots'
             },
             {
                 match: {
-                    id: 'c'
+                    id: 'below 40 yo'
                 },
-                id: 'dots'
+                id: 'lines'
             },
             {
                 match: {
-                    id: 'go'
+                    id: 'below 50 yo'
                 },
                 id: 'dots'
             },
