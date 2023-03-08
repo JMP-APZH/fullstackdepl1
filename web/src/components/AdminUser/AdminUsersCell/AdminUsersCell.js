@@ -91,7 +91,8 @@ export const Success = ({
           'rgb(54, 162, 235)',
           'rgb(255, 205, 86)',
         ],
-        borderColor: 'black',
+        borderColor: 'white',
+        labelColor: 'white',
         borderWidth: 1,
       },
     ],
@@ -178,6 +179,7 @@ export const Success = ({
       title: {
         display: true,
         text: 'Admin age Repartition 1 - Bar Chart',
+        // color: 'white',
       },
       animations: {
         tension: {
@@ -195,6 +197,7 @@ export const Success = ({
       title: {
         display: true,
         text: 'Admin age Repartition 2 - Doughnut',
+        color: 'white',
       },
       animations: {
         tension: {
@@ -210,7 +213,7 @@ export const Success = ({
 
   return (
     <>
-      <div className="flex items-center w-full flex-col bg-black p-4">
+      <div className="flex w-full flex-col items-center bg-black p-4">
         <h1 className="p-4 text-center text-lg text-red-600 underline">
           All as of here comes from the AdminUsersCell
         </h1>
@@ -266,9 +269,9 @@ export const Success = ({
           </div>
         </div>
       </div>
-      <div className="flex justify-center bg-black">
-        <div className="flex flex-col items-center justify-center max-h-md max-w-md rounded-2xl bg-black p-4 text-white shadow-2xl shadow-yellow-500">
-        <p className='w-full text-center text-yellow-500'>Admin Age Repartition 3 - Nivo Pie Chart</p>
+      <div className="flex justify-center bg-black p-4">
+        <div className="flex flex-col items-center justify-center rounded-2xl bg-black p-4 shadow-2xl shadow-yellow-500">
+          <p className='w-full text-center text-yellow-500'>Admin Age Repartition 3 - Nivo Pie Chart</p>
           <ResponsivePie
             data={datanivo}
             margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
